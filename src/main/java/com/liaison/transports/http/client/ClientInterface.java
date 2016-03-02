@@ -9,9 +9,7 @@ import java.io.PipedOutputStream;
 public class ClientInterface {
 
     public static OutputStream getOutputStream(String url) throws Exception {
-        PipedOutputStream os = new PipedOutputStream();
-        ApacheRequestExecutor requestExecutor = new ApacheRequestExecutor(os, url);
-        new Thread(requestExecutor).start(); // TODO move into write for performance (minimizes thread alive time)
+        PipedOutputStream os = new ACLPipedOutputStream(url);
         return os;
     }
 

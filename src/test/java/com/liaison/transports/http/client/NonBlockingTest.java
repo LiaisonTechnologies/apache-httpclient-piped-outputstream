@@ -14,7 +14,7 @@ public class NonBlockingTest {
         OutputStream os = ClientInterface.getOutputStream("http://localhost:3000");
 
         // write
-        os.write("fdfd".getBytes());
+        os.write("hello world".getBytes());
 
         // apache executor thread is killed on close (must enforce close in finalize)
         os.close();

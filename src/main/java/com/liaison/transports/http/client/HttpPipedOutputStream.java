@@ -4,11 +4,11 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 
-import java.io.*;
-import java.util.concurrent.Executors;
-
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.PipedInputStream;
+import java.io.PipedOutputStream;
+import java.util.concurrent.Executors;
 
 
 class HttpPipedOutputStream extends OutputStream {
@@ -19,6 +19,7 @@ class HttpPipedOutputStream extends OutputStream {
     private final HttpPost request;
     private final PipedInputStreamEntity ise;
     private final PipedOutputStream os;
+    private boolean writeInitiated = false;
 
     /**
      * Prepares an HTTP post request, with handle on OutputStream
@@ -50,36 +51,36 @@ class HttpPipedOutputStream extends OutputStream {
     public void init() {
 
 
-            // execute in separate thread
-            try {
+        // execute in separate thread
+        try {
 
-                System.out.println("Initiating client...");
+            System.out.println("Initiating client...");
 
-                Thread t = Executors.defaultThreadFactory().newThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            // WARN:  should be put into future with callback and
-                            // edge case handling
-                            // starts execution in a separate thread,
-                            // will block reading inputstream from entity
-                            // until os.close() called, then complete
-                            httpclient.execute(request);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
+            Thread t = Executors.defaultThreadFactory().newThread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        // WARN:  should be put into future with callback and
+                        // edge case handling
+                        // starts execution in a separate thread,
+                        // will block reading inputstream from entity
+                        // until os.close() called, then complete
+                        httpclient.execute(request);
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                });
+                }
+            });
 
-                //t.start();
+            //t.start();
 
-                t.setName("HTTP_CLIENT_THREAD");
-                Executors.newSingleThreadExecutor().execute(t);
+            t.setName("HTTP_CLIENT_THREAD");
+            Executors.newSingleThreadExecutor().execute(t);
 
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -95,12 +96,10 @@ class HttpPipedOutputStream extends OutputStream {
         }
     }
 
-    private boolean writeInitiated = false;
-
     @Override
     public void write(int b) throws IOException {
 
-      os.write(b);
+        os.write(b);
     }
 
     @Override
@@ -108,11 +107,10 @@ class HttpPipedOutputStream extends OutputStream {
         try {
             os.flush();
             os.close();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 
 
 }
