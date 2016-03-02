@@ -1,0 +1,29 @@
+apply plugin: 'application'
+apply plugin: 'idea'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+    
+dependencies {
+    compile 'io.dropwizard:dropwizard-core:0.9.1'
+    compile 'commons-io:commons-io:2.4'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.7.0'
+    compile 'com.google.code.gson:gson:2.5'
+    compile 'com.jayway.jsonpath:json-path:2.1.0'
+    compile 'org.apache.httpcomponents:httpclient:4.3.4'
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+mainClassName = "com.liaison.payloadstorage.application.PayloadStorageApplication"
+
+run {
+    args 'server',  './apache-client-outputstream-handler.yml'
+}
