@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25c98b49-79a5-4d1d-a7e8-a46e8e465220" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/liaison/transports/http/client/HttpPipedOutputStream$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/liaison/transports/http/client/HttpPipedOutputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/HttpPipedOutputStream.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/liaison/transports/http/client/ACLPipedOutputStream.class" afterPath="$PROJECT_DIR$/build/classes/main/com/liaison/transports/http/client/ACLPipedOutputStream.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ClientInterface.java" afterPath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ClientInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/HttpPipedOutputStream.java" afterPath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/HttpPipedOutputStream.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/PipedInputStreamEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/PipedInputStreamEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/todo.txt" afterPath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/todo.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java" afterPath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/liaison/transports/http/client/NonBlockingTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/liaison/transports/http/client/NonBlockingTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -59,41 +59,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PipedOutputStream.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/src.zip!/java/io/PipedOutputStream.java">
+      <file leaf-file-name="PipedInputStreamEntity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/PipedInputStreamEntity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ACLPipedOutputStream.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ACLPipedOutputStream.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-              <folding />
+            <state vertical-scroll-proportion="0.7088847">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="echo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/node/echo.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NonBlockingTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NonBlockingTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/liaison/transports/http/client/NonBlockingTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36862004">
-              <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -113,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/todo.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -628,10 +620,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ApacheRequestExecutor.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/liaison/transports/http/client/PipedOutputStreamMVP.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/liaison/transports/http/client/NonBlockingTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/todo.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ClientInterface.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/liaison/transports/http/client/NonBlockingTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java" />
       </list>
     </option>
   </component>
@@ -1523,12 +1515,12 @@
       <created>1456949870340</created>
       <option name="number" value="Default" />
       <updated>1456949870340</updated>
-      <workItem from="1456949874006" duration="1300000" />
+      <workItem from="1456949874006" duration="3052000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1300000" />
+    <option name="totallyTimeSpent" value="3052000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1575,34 +1567,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/HttpPipedOutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/PipedInputStreamEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/node/echo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/todo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1639,6 +1607,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/todo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ApacheRequestExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1659,19 +1635,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/PipedInputStreamEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/liaison/transports/http/client/NonBlockingTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36862004">
-          <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7088847">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
