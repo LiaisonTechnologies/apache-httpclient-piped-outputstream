@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25c98b49-79a5-4d1d-a7e8-a46e8e465220" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/liaison/transports/http/client/HttpPipedOutputStream$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/liaison/transports/http/client/HttpPipedOutputStream.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/HttpPipedOutputStream.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/liaison/transports/http/client/ACLPipedOutputStream.class" afterPath="$PROJECT_DIR$/build/classes/main/com/liaison/transports/http/client/ACLPipedOutputStream.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/liaison/transports/http/client/ACLPipedOutputStream.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/com/liaison/transports/http/client/ClientInterface.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ClientInterface.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/com/liaison/transports/http/client/ApacheRequestExecutor.class" afterPath="$PROJECT_DIR$/build/classes/main/com/liaison/transports/http/client/ApacheRequestExecutor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/test/com/liaison/transports/http/client/NonBlockingTest.class" afterPath="$PROJECT_DIR$/build/classes/test/com/liaison/transports/http/client/NonBlockingTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java" afterPath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ApacheRequestExecutor.java" afterPath="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ApacheRequestExecutor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/liaison/transports/http/client/NonBlockingTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/liaison/transports/http/client/NonBlockingTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -35,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ClientInterface.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ClientInterface.java">
+      <file leaf-file-name="ApacheRequestExecutor.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ApacheRequestExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.46124762">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,14 +49,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApacheRequestExecutor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ApacheRequestExecutor.java">
+      <file leaf-file-name="AbstractHttpMessage.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.3.2/4809f38359edeea9487f747e09aa58ec8d3a54c5/httpcore-4.3.2-sources.jar!/org/apache/http/message/AbstractHttpMessage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+              <caret line="113" column="36" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3744#3745#0" expanded="true" />
+                <element signature="e#3796#3797#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Header.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.3.2/4809f38359edeea9487f747e09aa58ec8d3a54c5/httpcore-4.3.2-sources.jar!/org/apache/http/Header.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -69,23 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ACLPipedOutputStream.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7088847">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="NonBlockingTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/liaison/transports/http/client/NonBlockingTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -618,12 +619,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ApacheRequestExecutor.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/liaison/transports/http/client/PipedOutputStreamMVP.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/todo.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ClientInterface.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/liaison/transports/http/client/NonBlockingTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ApacheRequestExecutor.java" />
       </list>
     </option>
   </component>
@@ -1515,12 +1516,12 @@
       <created>1456949870340</created>
       <option name="number" value="Default" />
       <updated>1456949870340</updated>
-      <workItem from="1456949874006" duration="3052000" />
+      <workItem from="1456949874006" duration="3896000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3052000" />
+    <option name="totallyTimeSpent" value="3896000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1528,7 +1529,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1615,26 +1616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ApacheRequestExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ClientInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/PipedInputStreamEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1646,15 +1627,34 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/liaison/transports/http/client/NonBlockingTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ACLPipedOutputStream.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.3.2/4809f38359edeea9487f747e09aa58ec8d3a54c5/httpcore-4.3.2-sources.jar!/org/apache/http/message/AbstractHttpMessage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7088847">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="113" column="36" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
+          <folding>
+            <element signature="e#3744#3745#0" expanded="true" />
+            <element signature="e#3796#3797#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.3.2/4809f38359edeea9487f747e09aa58ec8d3a54c5/httpcore-4.3.2-sources.jar!/org/apache/http/Header.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liaison/transports/http/client/ApacheRequestExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46124762">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

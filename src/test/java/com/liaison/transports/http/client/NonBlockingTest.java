@@ -9,8 +9,10 @@ public class NonBlockingTest {
 
     public static void main(String[] args) throws Exception {
 
+
+
         // get output stream for an endpoint
-        OutputStream os = ClientInterface.getOutputStream("http://localhost:3000");
+        OutputStream os = ApacheRequestExecutor.getOutputStreamForHttpPost("http://localhost:3000");
 
         // write
         os.write("hello world".getBytes());
