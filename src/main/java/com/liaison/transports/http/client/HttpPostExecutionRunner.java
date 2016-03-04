@@ -21,6 +21,10 @@ public class HttpPostExecutionRunner implements Runnable {
         this.pos = pos;
     }
 
+    public CloseableHttpClient getHttpClient() {
+        return this.httpclient;
+    }
+
     @Override
     public void run() {
         try {

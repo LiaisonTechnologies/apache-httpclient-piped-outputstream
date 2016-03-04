@@ -13,16 +13,14 @@ import java.util.concurrent.TimeUnit;
  */
 public class NonBlockingTest {
 
-    public static void doPost(int payloadSize, String url) throws Exception {
+    public static void doPost(int payloadSizeFactor, String url, int pipeSize, boolean block) throws Exception {
 
         ExecutorService es = Executors.newCachedThreadPool();
 
         // get output stream for an endpoint
         Header[] headers = null;
 
-        int pipeSize = 1024*1024;
-
-        HttpPipedOutputStream os = new HttpPipedOutputStream(url, headers, pipeSize);
+        HttpPipedOutputStream os = new HttpPipedOutputStream(url, headers, pipeSize, block);
 
         HttpPostExecutionRunner hper = new HttpPostExecutionRunner(os);
 
@@ -30,7 +28,7 @@ public class NonBlockingTest {
         es.execute(hper);
 
         // write
-        for (int x=0; x<payloadSize; x++) {
+        for (int x=0; x<payloadSizeFactor; x++) {
             os.write(UUID.randomUUID().toString().getBytes());
         }
 
@@ -44,9 +42,12 @@ public class NonBlockingTest {
 
     @Timed
     public static void main(String[] args) throws Exception {
+        int pipeSizeBytes = 64 * 64;
+        int payloadSizeFactor = pipeSizeBytes * 16;
+        boolean block  = true;
+        String url = "http://localhost:3000";
 
-        doPost(1000*500, "http://localhost:3000");
-
+        doPost(payloadSizeFactor, url, pipeSizeBytes, block);
     }
 
   /*  1. Are we heading into a bad zone here with too many threads being spawned and managed? - Need executor service manager
