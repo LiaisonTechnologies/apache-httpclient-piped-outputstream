@@ -20,7 +20,9 @@ public class NonBlockingTest {
         // get output stream for an endpoint
         Header[] headers = null;
 
-        HttpPipedOutputStream os = new HttpPipedOutputStream(url, headers);
+        int pipeSize = 1024*1024;
+
+        HttpPipedOutputStream os = new HttpPipedOutputStream(url, headers, pipeSize);
 
         HttpPostExecutionRunner hper = new HttpPostExecutionRunner(os);
 
@@ -43,7 +45,7 @@ public class NonBlockingTest {
     @Timed
     public static void main(String[] args) throws Exception {
 
-        doPost(1000, "http://localhost:3000");
+        doPost(1000*500, "http://localhost:3000");
 
     }
 

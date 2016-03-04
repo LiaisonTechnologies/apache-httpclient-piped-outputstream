@@ -25,7 +25,8 @@ public class HttpPostExecutionRunner implements Runnable {
     public void run() {
         try {
             httpclient.execute(this.pos.getPostObject()); // blocks on is.read which blocks on os.close
-            pos.getConnectedInputStream().close();
+            pos.getConnectedInputStream().close(); // close connected inputstream
+            pos.setCompletedExecution();
         } catch (IOException e) {
             e.printStackTrace();
         }
