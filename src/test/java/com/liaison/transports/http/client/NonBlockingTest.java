@@ -3,29 +3,29 @@ package com.liaison.transports.http.client;
 import com.codahale.metrics.annotation.Timed;
 import org.apache.http.Header;
 
-import java.io.OutputStream;
-import java.io.PipedOutputStream;
 import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Rob on 3/2/16.
  */
 public class NonBlockingTest {
 
-
     public static void doPost(int payloadSize, String url) throws Exception {
+
         ExecutorService es = Executors.newCachedThreadPool();
 
         // get output stream for an endpoint
         Header[] headers = null;
 
-        PipedOutputStream os = new PipedOutputStream();
-        HttpPostExecutionCoordinator hpec = new HttpPostExecutionCoordinator(es, os, url, headers);
+        HttpPipedOutputStream os = new HttpPipedOutputStream(url, headers);
 
-        hpec.init();
+        HttpPostExecutionRunner hper = new HttpPostExecutionRunner(os);
 
+        // kick off apache post execution thread
+        es.execute(hper);
 
         // write
         for (int x=0; x<payloadSize; x++) {
@@ -35,13 +35,15 @@ public class NonBlockingTest {
         // apache executor thread is killed on close (must enforce close in finalize)
         os.close();
 
+        // now block on closing thread
         es.shutdown();
+
     }
 
     @Timed
     public static void main(String[] args) throws Exception {
 
-        doPost(1000*1000, "http://localhost:3000");
+        doPost(1000, "http://localhost:3000");
 
     }
 
