@@ -13,22 +13,21 @@ import java.util.concurrent.Executors;
 /**
  * Created by Rob on 3/2/16.
  */
-public class ApacheRequestExecutor implements Runnable {
+public class ApachePostRequestExecutor implements Runnable {
 
     private final InputStream is;
     private final CloseableHttpClient httpclient = HttpClientBuilder.create().build();
     private final HttpPost request;
 
-
-    public static OutputStream getOutputStreamForHttpPost(String url, Header[] headers) throws Exception {
+    public static OutputStream getOutputStream(ExecutorService es, String url, Header[] headers) throws Exception {
         PipedOutputStream pos = new PipedOutputStream();
-
-        ApacheRequestExecutor are = new ApacheRequestExecutor(pos, url, headers);
-
+        ApachePostRequestExecutor are = new ApachePostRequestExecutor(es, pos, url, headers); // TODO vet cache scheme
         return pos;
     }
 
-    public ApacheRequestExecutor(PipedOutputStream pos, String url, Header[] headers) throws IOException {
+    // TODO MOVE THIS INTO TESTS
+
+    public ApachePostRequestExecutor(ExecutorService es, PipedOutputStream pos, String url, Header[] headers) throws IOException {
 
         this.is = new PipedInputStream(pos);
 
@@ -41,13 +40,7 @@ public class ApacheRequestExecutor implements Runnable {
         InputStreamEntity e = new InputStreamEntity(is, -1);
         this.request.setEntity(e);
 
-        // TODO should be registered with ExecutorServiceManager
-        ExecutorService es = Executors.newCachedThreadPool();
-
-        // TODO properly vet pooling strategy
         es.execute(this); // TODO move this into first byte written for optimization
-        es.shutdown();
-
 
     }
 
