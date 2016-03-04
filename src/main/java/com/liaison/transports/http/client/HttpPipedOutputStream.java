@@ -17,12 +17,21 @@ public class HttpPipedOutputStream extends PipedOutputStream {
     private final InputStreamEntity entity;
     private final PipedInputStream pis;
     private final boolean block;
+    // set state that completion has executed...
+    // should be post close()
+    boolean postCompletion = false;
 
-    public HttpPipedOutputStream(String url, Header[] headers, int pipeSize, boolean block) throws Exception {
+    public HttpPipedOutputStream(String url, Header[] headers, int pipeSize, boolean block){
         this.request = new HttpPost(url);
         this.request.setHeaders(headers);
         this.pis = new PipedInputStream(pipeSize);
-        this.pis.connect(this);
+
+        try {
+            this.pis.connect(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         this.entity = new InputStreamEntity(this.pis, -1); // connect read stream
         this.request.setEntity(entity);
         this.block = block;
@@ -36,12 +45,10 @@ public class HttpPipedOutputStream extends PipedOutputStream {
         return pis;
     }
 
-    // set state that completion has executed...
-    // should be post close()
-    boolean postCompletion = false;
     public void setCompletedExecution() {
         postCompletion = true;
     }
+
     public boolean isCompletedExecution() {
         return postCompletion;
     }

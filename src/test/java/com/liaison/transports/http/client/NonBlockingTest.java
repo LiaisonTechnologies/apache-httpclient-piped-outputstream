@@ -32,7 +32,7 @@ public class NonBlockingTest {
             os.write(UUID.randomUUID().toString().getBytes());
         }
 
-        // apache executor thread is killed on close (must enforce close in finalize)
+        // apache executor thread is killed on close
         os.close();
 
         // now block on closing thread
@@ -48,6 +48,14 @@ public class NonBlockingTest {
         String url = "http://localhost:3000";
 
         doPost(payloadSizeFactor, url, pipeSizeBytes, block);
+        doPost(payloadSizeFactor, url, pipeSizeBytes*10, block);
+        doPost(payloadSizeFactor*24, url, pipeSizeBytes, true);
+        //doPost(payloadSizeFactor, url, pipeSizeBytes, block);
+        //doPost(payloadSizeFactor, url, pipeSizeBytes, block);
+        //doPost(payloadSizeFactor, url, pipeSizeBytes/10, false);
+        //doPost(payloadSizeFactor, url, pipeSizeBytes, false);
+        //doPost(payloadSizeFactor*24, url, pipeSizeBytes, block);
+
     }
 
   /*  1. Are we heading into a bad zone here with too many threads being spawned and managed? - Need executor service manager
