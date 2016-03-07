@@ -17,10 +17,11 @@ public class NonBlockingTest {
 
     @Timed
     public static void main(String[] args) throws Exception {
-        int pipeSizeBytes = 64 * 64;
-        int payloadSizeFactor = pipeSizeBytes * 16;
-        String url = "http://localhost:3000";
-        PostTestUtilities.doPost(payloadSizeFactor, url, pipeSizeBytes, true);
+        int pipeSizeBytes = 64 * 64;  // size of pipe buffer
+        int payloadSizeFactor = pipeSizeBytes * 16; // number of random bytes to generate as dummy payload
+        String url = "http://localhost:3000"; // echo.js, also available via ./run-server.sh
+
+        PostTestUtilities.doPost(payloadSizeFactor, url, pipeSizeBytes, true, 750L);
     }
 
 }

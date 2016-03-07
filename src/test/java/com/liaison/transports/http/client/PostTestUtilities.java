@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
  */
 public class PostTestUtilities {
 
-    public static void doPost(int payloadSizeFactor, String url, int pipeSize, boolean block) {
+    public static void doPost(int payloadSizeFactor, String url, int pipeSize, boolean block, long blockWaitTimeMillis) {
 
         // client manages thread-pool
         ExecutorService es = Executors.newCachedThreadPool();
@@ -20,8 +20,9 @@ public class PostTestUtilities {
         // set HTTP POST headers
         Header[] headers = null;
 
+
         // build outputstream
-        HttpPipedOutputStream os = new HttpPipedOutputStream(es, url, headers, pipeSize, block);
+        HttpPipedOutputStream os = new HttpPipedOutputStream(es, url, headers, pipeSize, block, blockWaitTimeMillis);
 
         // ... here is where FS2 returns the outputstream
 
