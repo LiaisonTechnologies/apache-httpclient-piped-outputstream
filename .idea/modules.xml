@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/apache-commons-http-client-outputstream-handler.iml" filepath="$PROJECT_DIR$/apache-commons-http-client-outputstream-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apache-httpclient-piped-outputstream.iml" filepath="$PROJECT_DIR$/apache-httpclient-piped-outputstream.iml" />
     </modules>
   </component>
 </project>

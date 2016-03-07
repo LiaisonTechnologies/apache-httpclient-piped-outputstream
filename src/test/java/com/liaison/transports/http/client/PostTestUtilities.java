@@ -14,27 +14,18 @@ public class PostTestUtilities {
 
     public static void doPost(int payloadSizeFactor, String url, int pipeSize, boolean block) {
 
+        // client manages thread-pool
         ExecutorService es = Executors.newCachedThreadPool();
 
-        doPost(es, payloadSizeFactor, url, pipeSize, block);
-
-        // now block on closing thread
-        es.shutdown();
-    }
-
-    public static void doPost(ExecutorService es, int payloadSizeFactor, String url, int pipeSize, boolean block) {
-
-        // get output stream for an endpoint
+        // set HTTP POST headers
         Header[] headers = null;
 
-        HttpPipedOutputStream os = new HttpPipedOutputStream(url, headers, pipeSize, block);
+        // build outputstream
+        HttpPipedOutputStream os = new HttpPipedOutputStream(es, url, headers, pipeSize, block);
 
-        HttpPostExecutionRunner hper = new HttpPostExecutionRunner(os);
+        // ... here is where FS2 returns the outputstream
 
-        // kick off apache post execution thread
-        es.execute(hper);
-
-        // write
+        // write dummy data
         for (int x=0; x<payloadSizeFactor; x++) {
             byte randomBytes[] = UUID.randomUUID().toString().getBytes();
 
@@ -52,6 +43,8 @@ public class PostTestUtilities {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        es.shutdown();
 
     }
 
