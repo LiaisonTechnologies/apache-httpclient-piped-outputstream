@@ -30,8 +30,8 @@ allprojects {
     }
 }
 
-mainClassName = "com.liaison.payloadstorage.application.PayloadStorageApplication"
+// mainClassName = "com.liaison.transports.http.client...."
 
 run {
-    args 'server',  './apache-client-outputstream-handler.yml'
+    args 'server',  './apache-httpclient-piped-outputstream.yml'
 }
