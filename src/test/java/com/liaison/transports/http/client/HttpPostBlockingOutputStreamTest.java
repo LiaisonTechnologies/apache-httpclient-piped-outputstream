@@ -46,7 +46,7 @@ public class HttpPostBlockingOutputStreamTest {
         config.setBlock(true);
         config.setUrl("http://localhost:3000"); // setup test server with ./run-server.sh from project root
         config.setHeaders(new Header[]{});
-        config.setPipeBufferSizsBytes(1024);
+        config.setPipeBufferSizeBytes(1024);
         config.setBlockSleepTimeMillis(500L);
         config.setThreadPool(es);
 

@@ -69,7 +69,7 @@ public class PipedApacheClientOutputStreamConfig {
         return pipeSize;
     }
 
-    public void setPipeBufferSizsBytes(int pipeSize) {
+    public void setPipeBufferSizeBytes(int pipeSize) {
         this.pipeSize = pipeSize;
     }
 

@@ -27,5 +27,47 @@ This project was started from a DropWizard template, is more likely to be used a
 * Blocking on pipedOutputStream.close() - since wait on pipedInputStream.close() is optional.
  * Blocking is useful in cases where immediately downstream calling code expects a new state incurred from the POST.
 
+<h2>Example Usage</h2>
+Also see src/test for working examples.
+<pre>
+// Calling-code manages thread-pool
+ThreadFactory namedThreadFactory = new ThreadFactoryBuilder()
+    .setNameFormat("apache-client-executor-thread-%d").build();
+ExecutorService es = Executors.newCachedThreadPool(namedThreadFactory);
+
+// Client owns and provides http client builder
+CloseableHttpClient client = HttpClientBuilder.create().build();
+
+// Build configuration
+PipedApacheClientOutputStreamConfig config = new PipedApacheClientOutputStreamConfig();
+config.setUrl("http://localhost:3000");
+config.setPipeBufferSizeBytes(1024);
+config.setThreadPool(es);
+config.setHttpClient(client);
+
+// Instantiate OutputStream
+PipedApacheClientOutputStream os = new PipedApacheClientOutputStream(config);
+
+// Write to OutputStream
+os.write(...);
+
+try {
+  os.close();
+} catch (IOException e) {
+  logger.error(e.getLocalizedMessage(), e);
+}
+
+// Do stuff with HTTP response
+...
+
+// Close the HTTP response
+os.getResponse().close();
+
+// Finally, shut down thread pool
+// This must occur after retrieving response (after is) if interested in POST result
+es.shutdown();
+</pre>
+<i>In practice the same client, executor service, and config will likely be reused throughout the life of the application, so the outer prep and close code in the above example will likely live in bootstrap/init and finalization code rather than directly inline with the OutputStream instantiation.</i>
+
 <h2>Roadmap</h2>
 Please use github issues for roadmap and bug tasks.

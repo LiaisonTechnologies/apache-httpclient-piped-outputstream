@@ -36,7 +36,7 @@ public class HttpPostNonBlockingOutputStreamTest {
         PipedApacheClientOutputStreamConfig config = new PipedApacheClientOutputStreamConfig();
         config.setBlock(false);
         config.setUrl("http://localhost:3000"); // setup test server with ./run-server.sh from project root
-        config.setPipeBufferSizsBytes(1024);
+        config.setPipeBufferSizeBytes(1024);
         config.setThreadPool(es);
         config.setHttpClient(client);
 
