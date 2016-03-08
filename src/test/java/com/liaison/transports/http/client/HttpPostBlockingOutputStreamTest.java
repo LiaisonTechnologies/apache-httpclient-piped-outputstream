@@ -13,12 +13,14 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
 /**
+ * Tests blocking on os.close()
+ *
  * Created by Rob on 3/2/16.
  */
 
-public class HttpPostBlockOnOutputStreamCloseTest {
+public class HttpPostBlockingOutputStreamTest {
 
-    final static org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(HttpPostBlockOnOutputStreamCloseTest.class);
+    final static org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(HttpPostBlockingOutputStreamTest.class);
 
     // TODO simulate the case where the WriteToSocket() is slow — >> the PipeInputStream.read() will be slow — >
     // TODO begs the question:  does it stall the writer ? Or does the buffer of the pipe blow up?
@@ -105,7 +107,7 @@ public class HttpPostBlockOnOutputStreamCloseTest {
      * @throws Exception
      */
     public static void main (String[] args) throws Exception {
-        new HttpPostBlockOnOutputStreamCloseTest().testBlocking();
+        new HttpPostBlockingOutputStreamTest().testBlocking();
     }
 
 }
