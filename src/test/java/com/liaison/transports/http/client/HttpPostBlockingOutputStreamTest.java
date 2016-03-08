@@ -30,17 +30,6 @@ public class HttpPostBlockingOutputStreamTest {
 
     // TODO create client and executor service in pre step... and close executor service in post step
 
-    /**
-     * Pointed to by application YML as "run" target since src/main code intended
-     * to be driven from a larger scope (used as lib or copy/paste)
-     *
-     * @param args
-     * @throws Exception
-     */
-    public static void main(String[] args) throws Exception {
-        new HttpPostBlockingOutputStreamTest().testBlocking();
-    }
-
     @Test
     public void testBlocking() throws Exception {
 
