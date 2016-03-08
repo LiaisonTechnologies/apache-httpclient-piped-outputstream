@@ -1,6 +1,6 @@
 http = require('http');
 fs = require('fs');
-server = http.createServer( function(req, res) {
+server = http.createServer(function (req, res) {
 
     console.dir(req.param);
 
@@ -18,8 +18,7 @@ server = http.createServer( function(req, res) {
         });
 
     }
-    else
-    {
+    else {
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.end("Try POST method for echo...");
     }
