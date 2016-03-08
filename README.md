@@ -31,22 +31,23 @@ This project was started from a DropWizard template, is more likely to be used a
 Also see src/test for working examples.
 <pre>
 // Calling-code manages thread-pool
-ThreadFactory namedThreadFactory = new ThreadFactoryBuilder()
-    .setNameFormat("apache-client-executor-thread-%d").build();
-ExecutorService es = Executors.newCachedThreadPool(namedThreadFactory);
+ExecutorService es = Executors.newCachedThreadPool(
+new ThreadFactoryBuilder()
+  .setNameFormat("apache-client-executor-thread-%d")
+  .build());
 
-// Client owns and provides http client builder
-CloseableHttpClient client = HttpClientBuilder.create().build();
 
 // Build configuration
-PipedApacheClientOutputStreamConfig config = new PipedApacheClientOutputStreamConfig();
+PipedApacheClientOutputStreamConfig config = new      
+PipedApacheClientOutputStreamConfig();
 config.setUrl("http://localhost:3000");
 config.setPipeBufferSizeBytes(1024);
 config.setThreadPool(es);
-config.setHttpClient(client);
+config.setHttpClient(HttpClientBuilder.create().build());
 
 // Instantiate OutputStream
-PipedApacheClientOutputStream os = new PipedApacheClientOutputStream(config);
+PipedApacheClientOutputStream os = new     
+PipedApacheClientOutputStream(config);
 
 // Write to OutputStream
 os.write(...);
@@ -64,7 +65,8 @@ try {
 os.getResponse().close();
 
 // Finally, shut down thread pool
-// This must occur after retrieving response (after is) if interested in POST result
+// This must occur after retrieving response (after is) if interested   
+// in POST result
 es.shutdown();
 </pre>
 <i>In practice the same client, executor service, and config will likely be reused throughout the life of the application, so the outer prep and close code in the above example will likely live in bootstrap/init and finalization code rather than directly inline with the OutputStream instantiation.</i>
