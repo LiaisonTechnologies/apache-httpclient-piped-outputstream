@@ -1,28 +1,29 @@
-<h1>Apache Client Outputstream Handler</h1>
+<h1>Piped Apache Client OutputStream</h1>
 
-<i>This is a work in progress.  Tests are still minimal at this point and need improvement.</i>
+<h2>About</h2>
+Common Java HTTP clients do not provide direct access to the HTTP POST OutputStream, instead providing an InputStream-only interface.  There are cases where a handle on the OutputStream is preferred, and this project serves that purpose.
 
-<p>ACOH inverts Apache Client's API so that client threads can control outputstream at runtime.</p>
+The PipedApacheClientOutputStream inverts Apache Commons HTTP Client API to allow for calling-code-control over OutputStream for HTTP message POST.
+
+<h2>Note</h2>
+
+This project was started from a DropWizard template, but can and likely will be used as a lib.  To integrate with a larger composing project, manually port the http.client package and gradle build dependencies, or use the jar distributed to build/libs.
 
 <h2>Quick start</h2>
 
-To sanity check and exercise code, run the nodejs server from the root of project with ./run-server.sh.  You may need to chmod +x, and install node before this will work.  Once the server is running, the tests will run out of the box.  Otherwise tweak the hardcoded url.
+<h3>To exercise the OutputStream through test code</h3>
 
-Note - Made as dropwizard project but needs to deploy as a simple single file.
+<pre>
+./run-server.sh # starts node.js echo servlet that tests POST to
+./gradlew test # runs all tests
+</pre>
 
-Calling code
+<h2>PipedApacheOutputStream Features</h2>
 
-* Owns the executor service that spawns Apache client execution threads
-* Supplies the HttpClient instance so that calling code can manage http connection pool
-** But outputstream owns the HttpPOST because in order for this to work we need to do specific things like set the InputStreamEntity
-* Blocking is optional
-** Blocking means that outputStream.close() will block until inputstream.close() is called.
+* Calling-code owns the executor service that spawns Apache client execution threads.
+* Calling-code supplies the HttpClient instance so that calling code can manage things like HTTP connection pooling.
+* Blocking on pipedOutputStream.close() (wait on pipedInputStream.close()) is optional.
+** Blocking is useful in cases where immediately downstream calling code expects a new state incurred from the POST.
 
-Testing
-
-Tests are Junit (gradle default)
-
-* Run ./run-server.sh to start a server on localhost:3000
-* Tests will post to localhost:3000 by default
-* ./gradlew test
-
+<h2>Roadmap</h2>
+Please use github issues for roadmap and bug tasks.
