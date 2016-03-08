@@ -3,6 +3,7 @@ package com.liaison.transports.http.client;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -66,10 +67,10 @@ public class HttpPostNonBlockingOutputStreamTest {
             logger.error(e.getLocalizedMessage(), e);
         }
 
-        logger.debug(os.getResponse().getStatusLine().toString());
+        logger.debug("HTTP POST Response:  " + os.getResponse().getStatusLine().toString());
 
-        // TODO this should be called from os.close(), and
-        // TODO response should be obtained/used prior to close
+        // make sure target server responded with 200/OK
+        Assert.assertTrue(os.getResponse().getStatusLine().getStatusCode() == 200);
 
         os.getResponse().close(); // close http response
 
