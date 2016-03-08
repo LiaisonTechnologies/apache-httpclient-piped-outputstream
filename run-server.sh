@@ -1,2 +1,2 @@
 # runs a simple server for test
-node src/main/node/echo.js
+node src/test/test-server.js
